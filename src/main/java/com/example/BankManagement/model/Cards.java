@@ -19,10 +19,14 @@ public class Cards {
     Long id;
     CardType type; // CREDIT, DEBIT
     String cardNumber;
+
+    boolean active;
     LocalDate issueDate;
     LocalDate expiryDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     Users user;
+
+
 }

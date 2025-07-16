@@ -14,16 +14,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Component
 @Entity
-@Table(name="transactions")
+@Table(name = "transactions")
 public class Transactions {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    @Enumerated(EnumType.STRING)
     TransactionType type; // CREDIT, DEBIT, TRANSFER
+    TransactionState status;
     BigDecimal amount;
     LocalDateTime timestamp;
     String description;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    Users user;
+    @JoinColumn(name = "account_id")
+    Accounts account;
+
 }
