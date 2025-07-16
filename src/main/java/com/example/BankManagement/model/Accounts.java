@@ -24,8 +24,7 @@ public class Accounts {
             sequenceName = "transaction_seq",
             allocationSize = 1
     )
-    private Long id;
-    private String accountNumber;
+    private long accountNumber;
     private BigDecimal balance;
     private AccountType type; // SAVINGS, CURRENT, etc.
     private LocalDate openedDate;
